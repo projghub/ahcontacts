@@ -1,38 +1,49 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.8'
+gem 'rake'
+gem 'thin'
+gem 'ransack'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'jquery-rails'
+gem 'less-rails'
+gem 'twitter-bootstrap-rails'
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
+gem 'bcrypt-ruby', '~> 3.0.0'
 
-gem 'sqlite3'
-
+gem 'informal'
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
-
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
+  gem 'therubyracer', :platforms => :ruby
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+group :production do
+  gem 'pg'
+end
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :development, :test do
+  gem 'sqlite3'
+end
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
+group :test do
+  gem 'rspec-rails', '>= 2.11.0'
+  gem 'factory_girl_rails', '>= 3.5.0'
+  gem 'guard-rspec'
+  gem 'capybara', '>= 1.1.2'
+  gem 'database_cleaner', '>= 0.9.1'
+  gem 'email_spec', '>= 1.2.1'
+  gem 'launchy', '>= 2.1.0'
+  gem 'spork'
+  gem 'guard-spork'
+  gem 'rb-fsevent', require: false
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+group :development do
+  gem 'debugger'
+end

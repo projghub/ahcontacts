@@ -1,0 +1,12 @@
+development:
+  application_name: 'AH Contacts (Dev)'
+  application_slogan: 'Super-Powered Lead Generation'
+  apps_url: 'http://apps.lvh.me:3001'
+test:
+  application_name: 'AH Contacts'
+  application_slogan: 'Super-Powered Lead Generation'
+  apps_url: 'http://apps.lvh.me:3001'
+production:
+  application_name: 'AH Contacts'
+  application_slogan: 'Super-Powered Lead Generation'
+  apps_url: 'http://ahcontacts.herokuapps.com'
