@@ -1,0 +1,22 @@
+<div class="sign_in">
+  <%= form_tag(advertiser_sessions_path, { id: 'login' }) do %>
+    <h3>Sign In</h3>
+    <div class="slogan"><%= APPLICATION_SLOGAN %></div>
+    <div class="control-group">
+      <%= label_tag :email, nil, class: 'control-label' %>
+      <div class="controls">
+        <%= text_field_tag :email, params[:email], { id: :email, class: 'text-field' } %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= label_tag :password, nil, class: 'control-label' %>
+      <div class="controls">
+        <%= password_field_tag :password, nil, { id: :password, class: 'text-field' } %>
+      </div>
+    </div>
+
+    <div class="sign-in-actions">
+      <%= submit_tag 'Sign In', { id: 'sign-in-button', class: 'btn btn-warning btn-large' } %>
+    </div>
+  <% end %>
+</div>

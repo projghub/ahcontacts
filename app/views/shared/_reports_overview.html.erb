@@ -1,0 +1,92 @@
+<script type="text/javascript" src="http://code.highcharts.com/highcharts.js"></script>
+
+<script type="text/javascript">
+$(function () {
+    var chart;
+    $(document).ready(function() {
+        chart = new Highcharts.Chart({
+            chart: {
+              renderTo: 'report_container',
+              type: 'line',
+              marginBottom: 60
+            },
+            title: {
+              text: 'Funnel Overview',
+              x: -20
+            },
+            subtitle: {
+              text: 'Funnel report of Visitors, Contacts and Customers',
+              x: -20
+            },
+            xAxis: {
+              categories: <%= raw @categories.reverse.map { |c| "#{c}" } %>,
+              labels: {
+                enabled: false
+              }
+            },
+            yAxis: {
+              min: 0,
+              allowDecimals: false,
+              title: {
+                text: 'Total'
+              },
+              plotLines: [{
+                value: 0,
+                width: 1,
+                color: '#808080'
+              }]
+            },
+            tooltip: {
+              formatter: function() {
+                return '<b>'+ this.series.name +'</b><br/>'+
+                this.x +': '+ this.y;
+              }
+            },
+            series: [{
+              name: 'Visitors',
+              data: <%= raw @visitors_total.reverse.map { |v| v } %>
+            }, {
+              name: 'Contacts',
+              data: <%= raw @contacts_total.reverse.map { |p| p } %>
+            }, {
+              name: 'Customers',
+              data: <%= raw @customers_total.reverse.map { |c| c } %>
+            }]
+        });
+    });
+});
+</script>
+
+<div id="report_container" style="min-width: 400px; height: 400px; margin: 0 auto;"></div>
+
+<div id="filter_toggle"></div>
+<div id="filter">
+  <%= render 'overview_search' %>
+</div>
+
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Visitors</th>
+      <th>Contacts</th>
+      <th>Customers</th>
+      <th>V2P</th>
+      <th>P2C</th>
+      <th>V2C</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @end_date.downto(@start_date).with_index do |date, index| %>
+      <tr>
+        <td><%= @categories[index] %></td>
+        <td><%= @visitors_total[index] %></td>
+        <td><%= @contacts_total[index] %></td>
+        <td><%= @customers_total[index] %></td>
+        <td><%= report_percentage((@contacts_total[index] + @customers_total[index]), @visitors_total[index], {precision: 2}) %></td>
+        <td><%= report_percentage(@customers_total[index], (@contacts_total[index] + @customers_total[index]), {precision: 2}) %></td>
+        <td><%= report_percentage(@customers_total[index], @visitors_total[index], {precision: 2}) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

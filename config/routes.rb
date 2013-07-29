@@ -8,6 +8,8 @@ Ahcontacts::Application.routes.draw do
       match '/dashboard' => 'admin#dashboard'
       match '/login' => 'sessions#new'
       match '/logout' => 'sessions#destroy'
+
+      resources :sessions, only: [:create]
     end
 
     match '/advertiser' => 'advertiser/advertiser#index'
@@ -15,6 +17,9 @@ Ahcontacts::Application.routes.draw do
       match '/dashboard' => 'advertiser#dashboard'
       match '/login' => 'sessions#new'
       match '/logout' => 'sessions#destroy'
+
+      resources :contacts
+      resources :sessions, only: [:create]
     end
   end
 
