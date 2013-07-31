@@ -5,7 +5,7 @@ ruby "1.9.3"
 gem 'rails', '3.2.8'
 gem 'rake'
 gem 'thin'
-gem 'ransack'
+gem 'ransack', '0.7.2'
 
 gem 'jquery-rails'
 gem 'less-rails'
