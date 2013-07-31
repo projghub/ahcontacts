@@ -1,0 +1,108 @@
+.order_pending {
+  font-weight: bold;
+  color: #ED9121;
+}
+
+.order_cancelled {
+  font-weight: bold;
+  color: #F2473F;
+}
+
+.order_shipped {
+  font-weight: bold;
+  color: #693;
+}
+
+.transaction_approved {
+  font-weight: bold;
+  color: #693;
+}
+
+.transaction_declined {
+  font-weight: bold;
+  color: #F2473F;
+}
+
+.order_show_back_button {
+  padding-bottom: 5px;
+}
+
+.help {
+  font-size: 12px;
+  color: #666;
+}
+
+.help_block {
+  padding-bottom: 3px;
+}
+
+/* Advertiser */
+#advertiser_offer_pixel {
+  width: 500px;
+  height: 200px;
+}
+
+#advertiser_email_email_text, #advertiser_email_email_html {
+  width: 100%;
+}
+
+.ace_editor {
+    width: 903px;
+    height: 410px;
+    position: relative;
+}
+
+#advertiser_offer_pixel {
+  width: 500px;
+  height: 200px;
+}
+
+#advertiser_design_html, #advertiser_design_css, #advertiser_design_javascript {
+  display: none;
+}
+
+.text-area {
+  width: 100%;
+}
+
+#tag_cloud {
+  width: 400px;
+  line-height: 1.6em;
+  .s { font-size: 0.8em; }
+  .m { font-size: 1.2em; }
+  .l { font-size: 1.8em; }
+}
+
+.filler {
+  min-height: 400px;
+}
+
+.walkthrough {
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.walkthrough_nav {
+  margin: 20px 15px 30px 15px;
+  padding: 10px;
+}
+
+.current_walkthrough_step {
+  font-weight: bold;
+  font-size: 16px;
+  background-color: #CCC;
+}
+
+
+#filter_toggle {
+  margin: 10px 0px;
+}
+
+.row-buffer {
+  margin-top: 20px;
+}
+
+#note_description {
+  width: 400px;
+  height: 300px;
+}

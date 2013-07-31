@@ -11,6 +11,10 @@ class User < ActiveRecord::Base
   validates :email, presence: true, format: { with: VALID_EMAIL_REGEX },
                     uniqueness: { case_sensitive: false }
 
+  def to_s
+    [self.first_name, self.last_name].join(" ")
+  end
+
   private
   def self.advertiser_namespace
     joins('INNER JOIN permissions_users ON "users"."id" = "permissions_users"."user_id"')

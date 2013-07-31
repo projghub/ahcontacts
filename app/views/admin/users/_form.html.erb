@@ -1,0 +1,51 @@
+<%= form_for @admin_user, html: { class: 'form-horizontal' } do |f| %>
+  <%= render "shared/error_messages", target: @admin_user %>
+  <div class="control-group">
+    <%= f.label :first_name, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :first_name, class: 'text-field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_name, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :last_name, class: 'text-field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :email, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :email, class: 'text-field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :phone, class: 'text-field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :password, class: 'control-label' %>
+    <div class="controls">
+      <%= f.password_field :password, class: 'text-field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :password_confirmation, class: 'control-label' %>
+    <div class="controls">
+      <%= f.password_field :password_confirmation, class: 'text-field' %>
+    </div>
+  </div>
+
+  <%= hidden_field_tag "admin_user[permission_ids][]", nil %>
+  <% Admin::Permission.all.each do |permission| %>
+    <%= check_box_tag "admin_user[permission_ids][]", permission.id, @admin_user.permission_ids.include?(permission.id), id: dom_id(permission) %>
+      <%= permission.namespace + "::" + permission.controller %><%= ("::" + permission.action) unless permission.action.blank? %><br />
+  <% end %>
+
+  <div class="form-actions">
+    <%= f.submit nil, class: 'btn btn-primary' %>
+    <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+                admin_users_path, class: 'btn' %>
+  </div>
+<% end %>

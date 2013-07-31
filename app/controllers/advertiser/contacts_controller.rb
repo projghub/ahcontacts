@@ -24,6 +24,8 @@ class Advertiser::ContactsController < Advertiser::AdvertiserController
 
   def show
     @advertiser_contact = Advertiser::Contact.find(params[:id])
+    @notes = @advertiser_contact.notes.order("created_at DESC")
+    @note = Note.new
   end
 
   def update
@@ -42,4 +44,11 @@ class Advertiser::ContactsController < Advertiser::AdvertiserController
     @advertiser_contact.save
     redirect_to advertiser_contacts_path, notice: 'Successfully deleted.'
   end
+
+  def add_note
+    @advertiser_contact = Advertiser::Contact.find(params[:contact_id])
+    @advertiser_contact.notes.create(user_id: advertiser_current_user.id, namespace: "advertiser", description: params[:note][:description], auto: false)
+    redirect_to @advertiser_contact, notice: "Note successfully added"
+  end
+
 end

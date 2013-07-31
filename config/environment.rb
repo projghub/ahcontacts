@@ -6,7 +6,7 @@ APPLICATION_NAME = application_settings['application_name']
 APPLICATION_SLOGAN = application_settings['application_slogan']
 APPS_URL = application_settings['apps_url']
 
-APPLICATION_DOMAINS = ['ahcontacts.herokuapps.com', 'apps.lvh.me']
+APPLICATION_DOMAINS = ['contacts.automationhero.com', 'contacts.lvh.me']
 
 #Constants
 VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i

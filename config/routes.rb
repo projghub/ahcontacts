@@ -9,6 +9,8 @@ Ahcontacts::Application.routes.draw do
       match '/login' => 'sessions#new'
       match '/logout' => 'sessions#destroy'
 
+      resources :contacts
+      resources :users
       resources :sessions, only: [:create]
     end
 
@@ -18,7 +20,9 @@ Ahcontacts::Application.routes.draw do
       match '/login' => 'sessions#new'
       match '/logout' => 'sessions#destroy'
 
-      resources :contacts
+      resources :contacts do
+        post '/notes' => 'contacts#add_note'
+      end
       resources :sessions, only: [:create]
     end
   end

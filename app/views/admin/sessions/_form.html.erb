@@ -1,0 +1,22 @@
+<div class="sign_in">
+  <%= form_tag admin_sessions_path, id: 'login' do %>
+    <h3>Sign In</h3>
+    <div class="slogan">Please sign in</div>
+    <div class="control-group">
+      <%= label_tag :email, "Email", class: 'control-label' %>
+      <div class="controls">
+        <%= text_field_tag :email, params[:email], { class: 'text-field', id: :email } %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= label_tag :password, "Password", class: 'control-label' %>
+      <div class="controls">
+        <%= password_field_tag :password, nil, { class: 'text-field', id: :password } %>
+      </div>
+    </div>
+
+    <div class="sign-in-actions">
+      <%= submit_tag 'Sign In', { id: 'sign-in-button', class: 'btn btn-warning btn-large' } %>
+    </div>
+  <% end %>
+</div>

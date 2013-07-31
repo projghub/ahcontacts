@@ -1,0 +1,91 @@
+/* typography */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1;
+}
+
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+h2 {
+  font-size: 1.7em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  font-weight: normal;
+  color: #999;
+}
+
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+/* DT, DD fix so show pages without data are displayed right */
+dt, dd {
+  line-height: 20px;
+  /* Keep this the same as line-height */
+  min-height: 20px;
+ }
+
+/* sign in */
+.sign_in {
+  width: 350px;
+  margin: 0 auto;
+}
+
+#login, #registration_new, #registration_show {
+  background: whiteSmoke;
+  border: 1px solid #E5E5E5;
+  padding: 20px 25px 35px 25px;
+}
+
+.subheader {
+  margin: 0 auto;
+  text-align: center;
+  width: 350px;
+  padding: 2px 0px 10px 0px;
+}
+
+.sign_in .control-group {
+  display: block;
+  width: 300px;
+}
+
+.sign_in .control-label {
+  display: block;
+  float: left;
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  width: 100px;
+}
+
+.sign_in .controls {
+  display: block;
+}
+
+.sign_in h3 {
+  line-height: 20px;
+}
+
+.sign_in .text-field {
+  width: 286px;
+}
+
+#sign-in-button {
+  width: 90px;
+}
+
+.sign-in-actions {
+
+}
+
+#new-registration-button {
+  width: 300px;
+}
+
+.slogan {
+  margin-bottom: 20px;
+}

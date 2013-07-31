@@ -1,0 +1,32 @@
+<%- model_class = Admin::User -%>
+<div class="page-header">
+  <h1><%=t '.title', default: model_class.model_name.human %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
+  <dd><%= @admin_user.first_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:last_name) %>:</strong></dt>
+  <dd><%= @admin_user.last_name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dd><%= @admin_user.email %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
+  <dd><%= @admin_user.phone %></dd>
+</dl>
+
+<h3>Permissions</h3>
+<% @admin_user.permissions.each do |permission| %>
+  <%= permission.namespace + "::" + permission.controller %><%= ("::" + permission.action) unless permission.action.blank? %><br />
+<% end %>
+
+<div class="form-actions">
+  <%= link_to t('.back', default: t("helpers.links.back")),
+              admin_users_path, class: 'btn'  %>
+  <%= link_to t('.edit', default: t("helpers.links.edit")),
+              edit_admin_user_path(@admin_user), class: 'btn' %>
+  <%= link_to t('.destroy', default: t("helpers.links.destroy")),
+              admin_user_path(@admin_user),
+              method: 'delete',
+              confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')),
+              class: 'btn btn-danger' %>
+</div>

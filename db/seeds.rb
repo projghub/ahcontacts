@@ -20,7 +20,6 @@ end
 create_permissions
 create_admin_user
 
-
 if Rails.env.development?
   def create_fake_advertiser_users
     user = User.create!(first_name: 'Advertiser', last_name: 'User', email: 'advertiser@crm.com', password: 'password')

@@ -1,25 +1,20 @@
 <% if advertiser_current_user %>
-  <div id="header">
-    <div class="container">
-      <%= link_to "Dashboard", advertiser_dashboard_path, class: "brand" %>
-      <a href="javascript:;" class="btn-navbar" data-toggle="collapse" data-target=".nav-collapse"><i class="icon-reorder"></i></a>
-      <div class="nav-collapse">
-        <ul id="main-nav" class="nav pull-right">
-          <li class="nav-icon">
-            <%= link_to advertiser_dashboard_path do %>
-              <i class="icon-home"></i><span>Home</span>
-            <% end %>
-          </li>
-
-          <li class="dropdown">
-            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-th-large"></i><span>Campaigns</span><b class="caret"></b></a>
-            <ul class="dropdown-menu">
-              <li><%= link_to "Contacts", advertiser_contacts_path %></li>
-            </ul>
-          </li>
-
-        </ul>
+  <header class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <%= link_to "Advertiser", advertiser_dashboard_path, id: "logo" %>
+        <nav>
+          <ul class="nav pull-right">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">Campaigns<b class="caret"></b></a>
+              <ul class="dropdown-menu">
+                <li><%= link_to "Contacts", advertiser_contacts_path %></li>
+              </ul>
+            </li>
+            <li><%= link_to "logout", advertiser_logout_path %></li>
+          </ul>
+        </nav>
       </div>
     </div>
-  </div>
+  </header>
 <% end %>
