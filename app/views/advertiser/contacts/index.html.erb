@@ -3,9 +3,14 @@
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
 </div>
 
-<%= link_to t('.new', :default => t("helpers.links.new")),
+<div id="filter_toggle">
+  <%= link_to t('.new', default: t("helpers.links.new")),
             new_advertiser_contact_path,
-            :class => 'btn btn-primary' %>
+            class: 'btn btn-primary' %>
+</div>
+<div id="filter">
+  <%= render 'search' %>
+</div>
 
 <%= will_paginate(@advertiser_contacts) %>
 
@@ -27,7 +32,7 @@
         <td><%= contact.company_name %></td>
         <td><%= contact.email %></td>
         <td><%= contact.phone %></td>
-        <td><%=l contact.created_at %></td>
+        <td><%=l contact.created_at, format: :created_at_date %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
                       edit_advertiser_contact_path(contact), :class => 'btn btn-mini' %>

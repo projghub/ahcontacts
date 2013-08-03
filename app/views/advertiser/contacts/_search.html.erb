@@ -1,0 +1,46 @@
+<div id="advertiser_search_form">
+  <%= search_form_for @q, html: { class: 'form-horizontal' } do |f| %>
+    <div class="control-group">
+      <%= f.label :first_name, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :first_name_cont, class: 'text-field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :last_name, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :last_name_cont, class: 'text-field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :email, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :email_cont, class: 'text-field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :phone, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :phone_cont, class: 'text-field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :website, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :website_cont, class: 'text-field' %>
+      </div>
+    </div>
+    <div class="control-group">
+      <%= f.label :company_name, class: 'control-label' %>
+      <div class="controls">
+        <%= f.text_field :company_name_cont, class: 'text-field' %>
+      </div>
+    </div>
+
+
+    <div class="form-actions">
+      <%= f.submit nil, class: 'btn btn-primary' %>
+      <%= link_to "Reset", url_for, class: 'btn' %>
+    </div>
+  <% end %>
+</div>

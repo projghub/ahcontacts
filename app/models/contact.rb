@@ -1,5 +1,5 @@
 class Contact < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :company_name, :address, :address2, :city, :region, :postal_code, :country, :email, :phone, :website, :fax, :contact_form_url
+  attr_accessible :first_name, :last_name, :company_name, :address, :address2, :city, :region, :postal_code, :country, :email, :phone, :website, :fax, :contact_form_url, :skype, :msn, :aol, :yahoo, :icq, :facebook, :google_plus, :twitter
 
   has_many :notes, as: :noteable
 

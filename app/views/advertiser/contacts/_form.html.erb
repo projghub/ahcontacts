@@ -1,86 +1,154 @@
 <%= form_for @advertiser_contact, :html => { :class => 'form-horizontal' } do |f| %>
-  <div class="control-group">
-    <%= f.label :first_name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :first_name, :class => 'text_field' %>
+
+
+  <div class="row">
+    <div class="span6">
+      <div class="control-group">
+        <%= f.label :first_name, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :first_name, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :last_name, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :last_name, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :company_name, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :company_name, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <h4>Address</h4>
+      </div>
+      <div class="control-group">
+        <%= f.label :address, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :address, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :address2, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :address2, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :city, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :city, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :region, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :region, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :postal_code, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :postal_code, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :country, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :country, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <h4>Contact</h4>
+      </div>
+      <div class="control-group">
+        <%= f.label :email, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :email, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :phone, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :phone, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :fax, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :fax, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :website, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :website, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :contact_form_url, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :contact_form_url, :class => 'text_field' %>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :last_name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :last_name, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :company_name, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :company_name, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :address, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :address, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :address2, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :address2, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :city, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :city, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :region, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :region, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :postal_code, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :postal_code, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :country, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :country, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :email, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :email, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :phone, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :phone, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :website, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :website, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :fax, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :fax, :class => 'text_field' %>
-    </div>
-  </div>
-  <div class="control-group">
-    <%= f.label :contact_form_url, :class => 'control-label' %>
-    <div class="controls">
-      <%= f.text_field :contact_form_url, :class => 'text_field' %>
+    <div class="span6">
+      <div class="control-group">
+        <h4>Instant Messenger</h4>
+      </div>
+      <div class="control-group">
+        <%= f.label :skype, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :skype, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :msn, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :msn, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :aol, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :aol, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :yahoo, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :yahoo, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :icq, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :icq, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <h4>Social</h4>
+      </div>
+      <div class="control-group">
+        <%= f.label :facebook, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :facebook, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :google_plus, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :google_plus, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :twitter, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :twitter, :class => 'text_field' %>
+        </div>
+      </div>
     </div>
   </div>
 

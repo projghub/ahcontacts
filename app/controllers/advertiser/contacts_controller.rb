@@ -1,7 +1,7 @@
 class Advertiser::ContactsController < Advertiser::AdvertiserController
   def index
     @q = Advertiser::Contact.active.search(params[:q])
-    @advertiser_contacts = @q.result(distinct: true).paginate(per_page: 20, page: params[:page])
+    @advertiser_contacts = @q.result(distinct: true).order("id DESC").paginate(per_page: 20, page: params[:page])
   end
 
   def new
@@ -50,5 +50,4 @@ class Advertiser::ContactsController < Advertiser::AdvertiserController
     @advertiser_contact.notes.create(user_id: advertiser_current_user.id, namespace: "advertiser", description: params[:note][:description], auto: false)
     redirect_to @advertiser_contact, notice: "Note successfully added"
   end
-
 end
