@@ -87,7 +87,7 @@ FactoryGirl.define do
     from_email "support@example.org"
     email_text "Thanks for signing up"
     email_html "<h1>Thanks for signing up</h1>"
-    subject "Exciting Subject!!!"
+	sequence(:subject) { |n| "Subject #{n}" }
     publish true
   end
 

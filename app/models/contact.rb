@@ -5,6 +5,8 @@ class Contact < ActiveRecord::Base
   has_many :taggings
   has_many :tags, through: :taggings
 
+  validates :email, allow_blank: true, allow_nil: true, format: { with: VALID_EMAIL_REGEX }
+
   def to_s
     "#{self.first_name} #{self.last_name}"
   end
@@ -22,11 +24,8 @@ class Contact < ActiveRecord::Base
   end
 
   def self.tag_counts
-#    Tag.select("tags.*, count(taggings.tag_id) as count").
-#      joins(:taggings).group("taggings.tag_id")
-
-#    Tag.select("tags.id, tags.name, count(taggings.tag_id) as count").
-#      joins(:taggings).group("taggings.tag_id, tags.id, tags.name")
+    Tag.select("tags.id, tags.name, count(taggings.tag_id) as count").
+      joins(:taggings).group("taggings.tag_id, tags.id, tags.name")
   end
 
   def tag_list

@@ -51,7 +51,7 @@
   <dt><strong><%= model_class.human_attribute_name(:twitter) %>:</strong></dt>
   <dd><%= @advertiser_contact.twitter %></dd>
   <dt><strong><%= model_class.human_attribute_name(:tags) %>:</strong></dt>
-  <dd><%= raw @advertiser_contact.tags.map(&:name).map { |t| link_to t, tag_path(t) }.join(', ') %></dd>
+  <dd><%= raw @advertiser_contact.tags.map(&:name).map { |t| link_to t, advertiser_contacts_path }.join(', ') %></dd>
 </dl>
 
 <div class="form-actions">

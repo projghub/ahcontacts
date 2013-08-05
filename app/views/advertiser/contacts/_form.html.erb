@@ -1,6 +1,5 @@
 <%= form_for @advertiser_contact, :html => { :class => 'form-horizontal' } do |f| %>
-
-
+  <%= render 'shared/error_messages', target: @advertiser_contact %>
   <div class="row">
     <div class="span6">
       <div class="control-group">
@@ -147,6 +146,15 @@
         <%= f.label :twitter, :class => 'control-label' %>
         <div class="controls">
           <%= f.text_field :twitter, :class => 'text_field' %>
+        </div>
+      </div>
+	  <div class="control-group">
+        <h4>Tags</h4>
+      </div>
+	  <div class="control-group">
+        <%= f.label :tag_list, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :tag_list, :class => 'text_field' %>
         </div>
       </div>
     </div>
