@@ -1,0 +1,25 @@
+<%- model_class = Advertiser::Email -%>
+<%- provide(:title, "Send Preview Email") -%>
+<%- provide(:description, t("emails.send_preview.description")) -%>
+<%- provide(:navigation_highlight, "") -%>
+
+<%= form_tag send_preview_advertiser_email_path, { class: 'form-horizontal' } do %>
+  <div class="control-group">
+    <%= label_tag :email, nil, class: 'control-label' %>
+    <div class="controls">
+      <%= link_to @advertiser_email, advertiser_email_path(@advertiser_email) %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= label_tag :send_it_to, nil, class: 'control-label' %>
+    <div class="controls">
+      <%= text_field_tag :email, advertiser_current_user.email, class: 'text-field' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= submit_tag "Send Preview Email", class: 'btn btn-primary' %>
+    <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+                advertiser_emails_path, class: 'btn' %>
+  </div>
+<% end %>

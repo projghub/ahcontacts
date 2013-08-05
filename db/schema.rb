@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130803201711) do
+ActiveRecord::Schema.define(:version => 20130805161340) do
 
   create_table "contacts", :force => true do |t|
     t.string   "first_name"
@@ -39,6 +39,18 @@ ActiveRecord::Schema.define(:version => 20130803201711) do
     t.string   "facebook"
     t.string   "google_plus"
     t.string   "twitter"
+  end
+
+  create_table "emails", :force => true do |t|
+    t.string   "name"
+    t.string   "subject"
+    t.string   "from_name",  :default => "Customer Support"
+    t.string   "from_email", :default => "support@automationhero.com"
+    t.text     "email_text"
+    t.text     "email_html"
+    t.boolean  "publish",    :default => true
+    t.datetime "created_at",                                           :null => false
+    t.datetime "updated_at",                                           :null => false
   end
 
   create_table "notes", :force => true do |t|
@@ -71,6 +83,22 @@ ActiveRecord::Schema.define(:version => 20130803201711) do
 
   add_index "permissions_users", ["permission_id"], :name => "index_permissions_users_on_permission_id"
   add_index "permissions_users", ["user_id"], :name => "index_permissions_users_on_user_id"
+
+  create_table "taggings", :force => true do |t|
+    t.integer  "tag_id"
+    t.integer  "contact_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "taggings", ["contact_id"], :name => "index_taggings_on_contact_id"
+  add_index "taggings", ["tag_id"], :name => "index_taggings_on_tag_id"
+
+  create_table "tags", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"

@@ -1,7 +1,9 @@
 class Contact < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :company_name, :address, :address2, :city, :region, :postal_code, :country, :email, :phone, :website, :fax, :contact_form_url, :skype, :msn, :aol, :yahoo, :icq, :facebook, :google_plus, :twitter
+  attr_accessible :first_name, :last_name, :company_name, :address, :address2, :city, :region, :postal_code, :country, :email, :phone, :website, :fax, :contact_form_url, :skype, :msn, :aol, :yahoo, :icq, :facebook, :google_plus, :twitter, :tag_list
 
   has_many :notes, as: :noteable
+  has_many :taggings
+  has_many :tags, through: :taggings
 
   def to_s
     "#{self.first_name} #{self.last_name}"
@@ -13,5 +15,27 @@ class Contact < ActiveRecord::Base
 
   def mark_as_deleted
     self.deleted_at = Time.now
+  end
+
+  def self.tagged_with(name)
+    Tag.find_by_name!(name).articles
+  end
+
+  def self.tag_counts
+#    Tag.select("tags.*, count(taggings.tag_id) as count").
+#      joins(:taggings).group("taggings.tag_id")
+
+#    Tag.select("tags.id, tags.name, count(taggings.tag_id) as count").
+#      joins(:taggings).group("taggings.tag_id, tags.id, tags.name")
+  end
+
+  def tag_list
+    tags.map(&:name).join(", ")
+  end
+
+  def tag_list=(names)
+    self.tags = names.split(",").map do |n|
+      Tag.where(name: n.strip).first_or_create!
+    end
   end
 end

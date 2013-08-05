@@ -1,0 +1,60 @@
+<script>
+  $(function() {
+    $("#tabs").tabs();
+  });
+</script>
+
+<%= form_for @advertiser_email, html: { class: 'form-horizontal' } do |f| %>
+  <%= render 'shared/error_messages', target: @advertiser_email %>
+  <div class="row">
+    <div class="span6">
+      <div class="control-group">
+        <%= f.label :name, class: 'control-label' %>
+        <a href="#" rel="tooltip" title="<%= t("tooltips.emails.name") %>"><i class="icon-question-sign"></i></a>
+        <div class="controls">
+          <%= f.text_field :name, class: 'text-field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :subject, class: 'control-label' %>
+        <div class="controls">
+          <%= f.text_field :subject, class: 'text-field' %>
+        </div>
+      </div>      <div class="control-group">
+        <%= f.label :from_name, class: 'control-label' %>
+        <a href="#" rel="tooltip" title="<%= t("tooltips.emails.from_name") %>"><i class="icon-question-sign"></i></a>
+        <div class="controls">
+          <%= f.text_field :from_name, class: 'text-field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <%= f.label :from_email, class: 'control-label' %>
+        <a href="#" rel="tooltip" title="<%= t("tooltips.emails.from_email") %>"><i class="icon-question-sign"></i></a>
+        <div class="controls">
+          <%= f.text_field :from_email, class: 'text-field' %>
+        </div>
+      </div>
+    </div>
+    <div class="span6 text-right">
+    </div>
+  </div>
+
+  <div id="tabs">
+    <ul>
+      <li><a href="#tabs-1">HTML Version</a></li>
+      <li><a href="#tabs-2">Text Version</a></li>
+    </ul>
+    <div id="tabs-1">
+      <%= f.text_area :email_html, class: 'text-area' %>
+    </div>
+    <div id="tabs-2">
+      <%= f.text_area :email_text, class: 'text-area' %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, class: 'btn btn-primary' %>
+    <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+      advertiser_emails_path, class: 'btn' %>
+  </div>
+<% end %>
