@@ -5,4 +5,8 @@ class Email < ActiveRecord::Base
   validates_presence_of :subject
 
   validates :from_email, presence: true, format: { with: VALID_EMAIL_REGEX }
+
+  def to_s
+    self.name
+  end
 end

@@ -1,5 +1,5 @@
 <%- model_class = Advertiser::Email -%>
-<%- provide(:title, "Edit #{model_class.model_name.human}") -%>
-<%- provide(:description, t("emails.edit.description")) -%>
-<%- provide(:navigation_highlight, "campaigns") -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => [:'helpers.titles.edit', 'Edit %{model}'], :model => model_class.model_name.human.titleize %></h1>
+</div>
 <%= render :partial => 'form' %>
