@@ -7,7 +7,7 @@ gem 'rake'
 gem 'thin'
 gem 'ransack', '0.7.2'
 
-gem 'jquery-rails'
+gem 'jquery-rails', "~> 2.3.0"
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
 gem 'bootstrap-will_paginate'

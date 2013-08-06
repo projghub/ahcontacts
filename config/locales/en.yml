@@ -2,3 +2,8 @@ en:
   time:
     formats:
       created_at_date: "%Y-%m-%d"
+  tooltips:
+    emails:
+      name: "This is how you identify the email in your Campaigns.  This name will NOT be seen by your Contacts"
+      from_name: "This is the name that Contacts will see as the FROM name when you send your Email."
+      from_email: "This is the email that Contacts will see as the FROM email when you send your Email."
