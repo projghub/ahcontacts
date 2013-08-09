@@ -6,6 +6,7 @@ class Contact < ActiveRecord::Base
   has_many :tags, through: :taggings
 
   validates :email, allow_blank: true, allow_nil: true, format: { with: VALID_EMAIL_REGEX }
+  validates_uniqueness_of :website
 
   def to_s
     "#{self.first_name} #{self.last_name}"
@@ -36,5 +37,12 @@ class Contact < ActiveRecord::Base
     self.tags = names.split(",").map do |n|
       Tag.where(name: n.strip).first_or_create!
     end
+  end
+
+protected
+  def self.total_count(start_at = Time.now, end_at = Time.now)
+    where("created_at > ?", start_at)
+	.where("created_at < ?", end_at)
+	.count
   end
 end

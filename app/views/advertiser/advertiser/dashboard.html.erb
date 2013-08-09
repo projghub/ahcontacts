@@ -5,6 +5,17 @@
 <div class="row">
   <div class="span4">
     <h3>Contacts</h3>
+
+	<dl class="dl-horizontal">
+	  <dt><strong>1 day</strong></dt>
+	  <dd><%= Contact.total_count(Time.now - 1.day, Time.now) %></dd>
+	  <dt><strong>7 day</strong></dt>
+	  <dd><%= Contact.total_count(Time.now - 7.day, Time.now) %></dd>
+	  <dt><strong>30 day</strong></dt>
+	  <dd><%= Contact.total_count(Time.now - 30.day, Time.now) %></dd>
+	  <dt><strong>Total</strong></dt>
+	  <dd><%= Contact.count %></dd>
+	</dl>
   </div>
 
   <div class="span4">
@@ -15,13 +26,25 @@
 </div>
 
 <div class="row">
-  <h3>How do I find affiliates?</h3>
-  <ul>
-    <li>Search for competitors names in Google.  Find blogs that are linking to competitors.</li>
-    <li>Search for known banners in Google images.</li>
-    <li>Search for blogs that discuss related topics.</li>
-    <li>Search sites of known affiliates.</li>
-    <li>Find related products in ClickBank marketplace.  Search google images for thier banners.</li>
-    <li>Use modifiers on our competitors like "Reviews" or "Scam"</li>
-  </ul>
+  <div class="span6">
+    <h3>How do I find affiliates?</h3>
+    <ul>
+      <li>Search for competitors names in Google.  Find blogs that are linking to competitors.</li>
+      <li>Search for known banners in Google images.</li>
+      <li>Search for blogs that discuss related topics.</li>
+      <li>Search sites of known affiliates.</li>
+      <li>Find related products in ClickBank marketplace.  Search google images for thier banners.</li>
+      <li>Use modifiers on our competitors like "Reviews" or "Scam"</li>
+    </ul>
+  </div>
+  <div class="span6">
+    <h3>Products</h3>
+    <ul>
+	  <li>Coffee Shop Millionaire</li>
+	  <li>Google Sniper</li>
+	  <li>Shoemoney System</li>
+	  <li>20 Minute PayDay</li>
+	  <li>Video Genesis</li>
+	</ul>
+  </div>
 </div>
