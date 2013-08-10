@@ -17,6 +17,7 @@
 <table class="table table-striped">
   <thead>
     <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:company_name) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
@@ -29,6 +30,7 @@
   <tbody>
     <% @advertiser_contacts.each do |contact| %>
       <tr>
+        <td><%= link_to contact.id, advertiser_contact_path(contact) %></td>
         <td><%= link_to contact, advertiser_contact_path(contact) %></td>
         <td><%= contact.company_name %></td>
         <td><%= contact.email %></td>
