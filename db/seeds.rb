@@ -34,5 +34,12 @@ if Rails.env.development?
     pu.save!
   end
 
+  def create_fake_statuses
+    Status.create!(name: "Sent first email", order: 1)
+    Status.create!(name: "Created account", order: 2)
+    Status.create!(name: "Sending Traffic", order: 3)
+  end
+
   create_fake_advertiser_users
+  create_fake_statuses
 end

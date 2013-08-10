@@ -1,0 +1,22 @@
+<%= form_for @advertiser_status, html: { class: 'form-horizontal' } do |f| %>
+  <%= render "shared/error_messages", target: @advertiser_status %>
+  <div class="control-group">
+    <%= f.label :name, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name, class: 'text-field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :placement, class: 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :placement, class: 'text-field' %>
+      (Must be a number)
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <%= f.submit nil, class: 'btn btn-primary' %>
+    <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+                advertiser_statuses_path, class: 'btn' %>
+  </div>
+<% end %>

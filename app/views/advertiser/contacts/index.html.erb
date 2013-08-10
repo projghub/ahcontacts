@@ -21,6 +21,7 @@
       <th><%= model_class.human_attribute_name(:company_name) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
       <th><%= model_class.human_attribute_name(:phone) %></th>
+      <th><%= model_class.human_attribute_name(:status_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -32,6 +33,7 @@
         <td><%= contact.company_name %></td>
         <td><%= contact.email %></td>
         <td><%= contact.phone %></td>
+        <td><%= contact.status %></td>
         <td><%=l contact.created_at, format: :created_at_date %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

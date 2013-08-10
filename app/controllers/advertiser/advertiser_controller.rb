@@ -8,6 +8,8 @@ class Advertiser::AdvertiserController < ApplicationController
   end
 
   def dashboard
+    @statuses = Contact.select("statuses.name, statuses.placement, COUNT(*) AS total").joins("LEFT JOIN statuses ON contacts.status_id = statuses.id").group("statuses.name").order(:placement).all
+    @contact_total = Contact.count
   end
 
   def whitelist_advertiser_permissions(permissions, whitelist_keys)

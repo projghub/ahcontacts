@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130805161340) do
+ActiveRecord::Schema.define(:version => 20130810215704) do
 
   create_table "contacts", :force => true do |t|
     t.string   "first_name"
@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(:version => 20130805161340) do
     t.string   "facebook"
     t.string   "google_plus"
     t.string   "twitter"
+    t.integer  "status_id"
   end
 
   create_table "emails", :force => true do |t|
@@ -83,6 +84,13 @@ ActiveRecord::Schema.define(:version => 20130805161340) do
 
   add_index "permissions_users", ["permission_id"], :name => "index_permissions_users_on_permission_id"
   add_index "permissions_users", ["user_id"], :name => "index_permissions_users_on_user_id"
+
+  create_table "statuses", :force => true do |t|
+    t.string   "name"
+    t.integer  "placement"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "taggings", :force => true do |t|
     t.integer  "tag_id"

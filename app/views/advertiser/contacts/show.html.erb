@@ -52,6 +52,8 @@
   <dd><%= @advertiser_contact.twitter %></dd>
   <dt><strong><%= model_class.human_attribute_name(:tags) %>:</strong></dt>
   <dd><%= raw @advertiser_contact.tags.map(&:name).map { |t| link_to t, advertiser_contacts_path }.join(', ') %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:status_id) %>:</strong></dt>
+  <dd><%= @advertiser_contact.status %></dd>
 </dl>
 
 <div class="form-actions">

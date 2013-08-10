@@ -23,8 +23,9 @@ Ahcontacts::Application.routes.draw do
       resources :contacts do
         post '/notes' => 'contacts#add_note'
       end
-	  resources :emails
+      resources :emails
       resources :sessions, only: [:create]
+      resources :statuses
     end
   end
 

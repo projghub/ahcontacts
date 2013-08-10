@@ -148,13 +148,22 @@
           <%= f.text_field :twitter, :class => 'text_field' %>
         </div>
       </div>
-	  <div class="control-group">
+      <div class="control-group">
         <h4>Tags</h4>
       </div>
-	  <div class="control-group">
+      <div class="control-group">
         <%= f.label :tag_list, :class => 'control-label' %>
         <div class="controls">
           <%= f.text_field :tag_list, :class => 'text_field' %>
+        </div>
+      </div>
+      <div class="control-group">
+        <h4>Status</h4>
+      </div>
+      <div class="control-group">
+        <%= f.label :status_id, :class => 'control-label' %>
+        <div class="controls">
+          <%= f.collection_select(:status_id, Status.order(:placement).all, :id, :name, include_blank: true) %>
         </div>
       </div>
     </div>
