@@ -8,7 +8,7 @@ class Advertiser::AdvertiserController < ApplicationController
   end
 
   def dashboard
-    @statuses = Contact.select("statuses.name, statuses.placement, COUNT(*) AS total").joins("LEFT JOIN statuses ON contacts.status_id = statuses.id").group("statuses.name").order(:placement).all
+    @statuses = Contact.select("statuses.name, statuses.placement, COUNT(*) AS total").joins("LEFT JOIN statuses ON contacts.status_id = statuses.id").group("statuses.name, statuses.placement").order(:placement).all
     @contact_total = Contact.count
   end
 
