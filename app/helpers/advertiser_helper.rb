@@ -1,7 +1,7 @@
 module AdvertiserHelper
-  def new_email_button
+  def new_email_button(namespace = :advertiser)
     link_to t('.new', default: t("helpers.links.new")),
-            new_advertiser_email_path, class: 'btn btn-primary'
+          send("new_#{namespace}_email_path"), class: 'btn btn-primary'
   end
 
   def placement_percentage(numerator, denominator, options = {})

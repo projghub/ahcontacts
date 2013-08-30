@@ -92,6 +92,11 @@ FactoryGirl.define do
     publish true
   end
 
+  factory :status do
+    sequence(:name) { |n| "Email #{n}" }
+    sequence(:placement) { |n| n }
+  end
+
   factory :tag do
     sequence(:name) { |n| "Tag #{n}" }
   end

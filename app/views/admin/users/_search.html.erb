@@ -1,33 +1,35 @@
 <div id="admin_search_form">
-  <%= search_form_for @q, html: { class: 'form-horizontal' } do |f| %>
-    <div class="control-group">
-      <%= f.label :first_name, class: 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :first_name_cont, class: 'text-field' %>
+  <div class="col-md-6">
+    <%= search_form_for @q, html: { class: 'form-horizontal' } do |f| %>
+      <div class="form-group">
+        <%= f.label :first_name_cont, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :first_name_cont, class: 'form-control' %>
+        </div>
       </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :last_name, class: 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :last_name_cont, class: 'text-field' %>
+      <div class="form-group">
+        <%= f.label :last_name_cont, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :last_name_cont, class: 'form-control' %>
+        </div>
       </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :email, class: 'control-label' %>
-      <div class="controls">
-        <%= f.text_field :email_cont, class: 'text-field' %>
+      <div class="form-group">
+        <%= f.label :email_cont, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :email_cont, class: 'form-control' %>
+        </div>
       </div>
-    </div>
-    <div class="control-group">
-      <%= f.label :permissions_id, class: 'control-label' %>
-      <div class="controls">
-        <%= f.collection_select(:permissions_id_eq, Permission.all, :id, :namespace, include_blank: true) %>
+      <div class="form-group">
+        <%= f.label :permissions_id_eq, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.collection_select(:permissions_id_eq, Permission.all, :id, :namespace, include_blank: true) %>
+        </div>
       </div>
-    </div>
 
-    <div class="form-actions">
-      <%= f.submit nil, class: 'btn btn-primary' %>
-      <%= link_to "Reset", url_for, class: 'btn' %>
-    </div>
-  <% end %>
+      <div class="col-md-9 col-md-offset-3">
+        <%= f.submit nil, class: 'btn btn-primary' %>
+        <%= link_to "Reset", url_for, class: 'btn' %>
+      </div>
+    <% end %>
+  </div>
 </div>

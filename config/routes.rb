@@ -12,8 +12,10 @@ Ahcontacts::Application.routes.draw do
       resources :contacts do
         post '/notes' => 'contacts#add_note'
       end
+      resources :emails
       resources :users
       resources :sessions, only: [:create]
+      resources :statuses
     end
 
     match '/advertiser' => 'advertiser/advertiser#index'
