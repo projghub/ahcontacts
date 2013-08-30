@@ -23,6 +23,7 @@
       <th><%= sort_link @q, :email, model_class.human_attribute_name(:email) %></th>
       <th><%= sort_link @q, :phone, model_class.human_attribute_name(:phone) %></th>
       <th><%= sort_link @q, :status_id, model_class.human_attribute_name(:status_id) %></th>
+      <th><%= sort_link @q, :user_id, model_class.human_attribute_name(:user_id) %></th>
       <th><%= sort_link @q, :created_at, model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -36,6 +37,7 @@
         <td><%= contact.email %></td>
         <td><%= contact.phone %></td>
         <td><%= contact.status %></td>
+        <td><%= contact.user %></td>
         <td><%=l contact.created_at, format: :created_at_date %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),

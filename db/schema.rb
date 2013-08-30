@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130810215704) do
+ActiveRecord::Schema.define(:version => 20130830211400) do
 
   create_table "contacts", :force => true do |t|
     t.string   "first_name"
@@ -40,6 +40,7 @@ ActiveRecord::Schema.define(:version => 20130810215704) do
     t.string   "google_plus"
     t.string   "twitter"
     t.integer  "status_id"
+    t.integer  "user_id"
   end
 
   create_table "emails", :force => true do |t|

@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_secure_password
   attr_accessible :first_name, :last_name, :email, :password, :password_confirmation, :phone, :permission_ids
 
+  has_many :contacts
   has_many :notes
   has_many :permissions_users
   has_many :permissions, through: :permissions_users

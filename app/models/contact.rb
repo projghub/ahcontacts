@@ -1,10 +1,11 @@
 class Contact < ActiveRecord::Base
-  attr_accessible :first_name, :last_name, :company_name, :address, :address2, :city, :region, :postal_code, :country, :email, :phone, :website, :fax, :contact_form_url, :skype, :msn, :aol, :yahoo, :icq, :facebook, :google_plus, :twitter, :tag_list, :status_id
+  attr_accessible :first_name, :last_name, :company_name, :address, :address2, :city, :region, :postal_code, :country, :email, :phone, :website, :fax, :contact_form_url, :skype, :msn, :aol, :yahoo, :icq, :facebook, :google_plus, :twitter, :tag_list, :status_id, :user_id
 
   has_many :notes, as: :noteable
   has_many :taggings
   has_many :tags, through: :taggings
   belongs_to :status
+  belongs_to :user
 
   validates :email, allow_blank: true, allow_nil: true, format: { with: VALID_EMAIL_REGEX }
   validates_uniqueness_of :website, allow_blank: true
@@ -43,7 +44,7 @@ class Contact < ActiveRecord::Base
 protected
   def self.total_count(start_at = Time.now, end_at = Time.now)
     where("created_at > ?", start_at)
-	.where("created_at < ?", end_at)
-	.count
+    .where("created_at < ?", end_at)
+    .count
   end
 end
