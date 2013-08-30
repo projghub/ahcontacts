@@ -10,7 +10,7 @@ gem 'ransack', '0.7.2'
 gem 'jquery-rails', "~> 2.3.0"
 gem 'less-rails'
 gem 'twitter-bootstrap-rails'
-gem 'bootstrap-will_paginate'
+gem 'bootstrap-will_paginate', :git => 'git://github.com/yrgoldteeth/bootstrap-will_paginate.git'
 gem 'will_paginate'
 gem 'bcrypt-ruby', '~> 3.0.0'
 
