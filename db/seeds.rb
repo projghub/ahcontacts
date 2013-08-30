@@ -35,9 +35,9 @@ if Rails.env.development?
   end
 
   def create_fake_statuses
-    Status.create!(name: "Sent first email", order: 1)
-    Status.create!(name: "Created account", order: 2)
-    Status.create!(name: "Sending Traffic", order: 3)
+    Status.create!(name: "Sent first email", placement: 1)
+    Status.create!(name: "Created account", placement: 2)
+    Status.create!(name: "Sending Traffic", placement: 3)
   end
 
   create_fake_advertiser_users

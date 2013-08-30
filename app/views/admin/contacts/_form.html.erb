@@ -1,0 +1,177 @@
+<%= form_for @admin_contact, html: { class: 'form-horizontal' } do |f| %>
+  <%= render 'shared/error_messages', target: @admin_contact %>
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <h3>Contact Information</h3>
+      </div>
+      <div class="form-group">
+        <%= f.label :first_name, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :first_name, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :last_name, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :last_name, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :company_name, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :company_name, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :address, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :address, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :address2, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :address2, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :city, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :city, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :region, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :region, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :postal_code, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :postal_code, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :country, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :country, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <h3>Contact</h3>
+      </div>
+      <div class="form-group">
+        <%= f.label :email, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :email, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :phone, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :phone, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :fax, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :fax, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :website, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :website, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :contact_form_url, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :contact_form_url, class: 'form-control' %>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="form-group">
+        <h3>Instant Messenger</h3>
+      </div>
+      <div class="form-group">
+        <%= f.label :skype, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :skype, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :msn, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :msn, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :aol, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :aol, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :yahoo, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :yahoo, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :icq, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :icq, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <h3>Social</h3>
+      </div>
+      <div class="form-group">
+        <%= f.label :facebook, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :facebook, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :google_plus, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :google_plus, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :twitter, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :twitter, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <h3>Tags</h3>
+      </div>
+      <div class="form-group">
+        <%= f.label :tag_list, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.text_field :tag_list, class: 'form-control' %>
+        </div>
+      </div>
+      <div class="form-group">
+        <h3>Status</h3>
+      </div>
+      <div class="form-group">
+        <%= f.label :status_id, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= f.collection_select(:status_id, Status.order(:placement).all, :id, :name, include_blank: true) %>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="col-md-12 text-center">
+    <%= f.submit nil, class: 'btn btn-primary btn-lg' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                admin_contacts_path, class: 'btn' %>
+  </div>
+<% end %>

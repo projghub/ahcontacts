@@ -79,7 +79,7 @@ FactoryGirl.define do
     sequence(:first_name) { |n| "First #{n}" }
     sequence(:last_name) { |n| "Last #{n}" }
     sequence(:email) { |n| "email-#{n}@example.org" }
-	tag_list "Test, Test 2, Test 3"
+    tag_list "Test, Test 2, Test 3"
   end
   
   factory :email do
