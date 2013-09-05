@@ -40,6 +40,13 @@ if Rails.env.development?
     Status.create!(name: "Sending Traffic", placement: 3)
   end
 
+  def create_fake_contacts
+    Contact.create!(first_name: "First 1", last_name: "Last 1", tag_list: "Mom")
+    Contact.create!(first_name: "First 2", last_name: "Last 2", tag_list: "MLM")
+    Contact.create!(first_name: "First 3", last_name: "Last 3", tag_list: "MLM")
+  end
+
   create_fake_advertiser_users
   create_fake_statuses
+  create_fake_contacts
 end

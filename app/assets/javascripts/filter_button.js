@@ -3,6 +3,7 @@ var addInputButton = function(toggle_div, id, txt, clk) {
         .text(txt)
         .attr("id", id)
         .addClass("btn")
+        .addClass("btn-default")
         .click(clk);
     $("#" + toggle_div).append(btn);
     return btn;

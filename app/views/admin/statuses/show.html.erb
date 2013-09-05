@@ -1,7 +1,5 @@
 <%- model_class = Admin::Status -%>
-<div class="page-header">
-  <h1><%=t '.title', default: model_class.model_name.human %></h1>
-</div>
+<%= admin_page_header(model_class.model_name.human) %>
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
@@ -12,9 +10,9 @@
 
 <div class="col-md-12">
   <%= link_to t('.back', default: t("helpers.links.back")),
-              admin_statuses_path, class: 'btn'  %>
+              admin_statuses_path, class: 'btn btn-default'  %>
   <%= link_to t('.edit', default: t("helpers.links.edit")),
-              edit_admin_status_path(@admin_status), class: 'btn' %>
+              edit_admin_status_path(@admin_status), class: 'btn btn-default' %>
   <%= link_to t('.destroy', default: t("helpers.links.destroy")),
               admin_status_path(@admin_status),
               method: 'delete',
