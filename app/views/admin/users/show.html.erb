@@ -1,16 +1,15 @@
 <%- model_class = Admin::User -%>
-<div class="page-header">
-  <h1><%=t '.title', default: model_class.model_name.human %></h1>
-</div>
+<%- provide(:title, model_class.model_name.human.titleize) -%>
+<%= admin_page_header(yield(:title)) %>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:first_name) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:first_name) %></strong></dt>
   <dd><%= @admin_user.first_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:last_name) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:last_name) %></strong></dt>
   <dd><%= @admin_user.last_name %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:email) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:email) %></strong></dt>
   <dd><%= @admin_user.email %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:phone) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:phone) %></strong></dt>
   <dd><%= @admin_user.phone %></dd>
 </dl>
 
@@ -19,11 +18,11 @@
   <%= permission.namespace + "::" + permission.controller %><%= ("::" + permission.action) unless permission.action.blank? %><br />
 <% end %>
 
-<div class="form-actions">
+<div class="col-md-12">
   <%= link_to t('.back', default: t("helpers.links.back")),
-              admin_users_path, class: 'btn'  %>
+              admin_users_path, class: 'btn btn-default'  %>
   <%= link_to t('.edit', default: t("helpers.links.edit")),
-              edit_admin_user_path(@admin_user), class: 'btn' %>
+              edit_admin_user_path(@admin_user), class: 'btn btn-default' %>
   <%= link_to t('.destroy', default: t("helpers.links.destroy")),
               admin_user_path(@admin_user),
               method: 'delete',

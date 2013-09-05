@@ -1,9 +1,7 @@
 <%- provide(:title, 'Dashboard') -%>
-<%- provide(:description, t('dashboard.description')) -%>
-<%- provide(:navigation_highlight, "home") -%>
 
 <div class="row">
-  <div class="span4">
+  <div class="col-md-4">
     <h3>Contacts</h3>
 
     <dl class="dl-horizontal">
@@ -18,7 +16,7 @@
     </dl>
   </div>
 
-  <div class="span4">
+  <div class="col-md-4">
     <h3>Pipeline</h3>
     <dl class="dl-horizontal">
     <% @statuses.each do |status| %>
@@ -30,12 +28,12 @@
     </dl>
   </div>
 
-  <div class="span4">
+  <div class="col-md-4">
   </div>
 </div>
 
 <div class="row">
-  <div class="span6">
+  <div class="col-md-6">
     <h3>How do I find affiliates?</h3>
     <ul>
       <li>Search for competitors names in Google.  Find blogs that are linking to competitors.</li>
@@ -46,14 +44,14 @@
       <li>Use modifiers on our competitors like "Reviews" or "Scam"</li>
     </ul>
   </div>
-  <div class="span6">
+  <div class="col-md-6">
     <h3>Products</h3>
     <ul>
-	  <li>Coffeeshop Millionaire</li>
-	  <li>Google Sniper</li>
-	  <li>Shoemoney System</li>
-	  <li>20 Minute PayDay</li>
-	  <li>Video Genesis</li>
-	</ul>
+      <li>Coffeeshop Millionaire</li>
+      <li>Google Sniper</li>
+      <li>Shoemoney System</li>
+      <li>20 Minute PayDay</li>
+      <li>Video Genesis</li>
+    </ul>
   </div>
 </div>

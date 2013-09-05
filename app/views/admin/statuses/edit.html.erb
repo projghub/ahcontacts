@@ -1,4 +1,5 @@
 <%- model_class = Admin::Status -%>
-<%= admin_page_header("Edit #{model_class.model_name.human.titleize}") %>
+<%- provide(:title, "Edit #{model_class.model_name.human.titleize}") -%>
+<%= admin_page_header(yield(:title)) %>
 
 <%= render :partial => 'form' %>

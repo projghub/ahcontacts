@@ -1,7 +1,7 @@
-<%= form_for @admin_contact, html: { class: 'form-horizontal' } do |f| %>
-  <%= render 'shared/error_messages', target: @admin_contact %>
-  <div class="row">
-    <div class="col-md-6">
+<div class="row">
+  <div class="col-md-6">
+    <%= form_for @admin_contact, html: { class: 'form-horizontal' } do |f| %>
+      <%= render 'shared/error_messages', target: @admin_contact %>
       <div class="form-group">
         <h3>Contact Information</h3>
       </div>
@@ -172,12 +172,12 @@
           <%= f.collection_select(:user_id, User.all, :id, :first_name, include_blank: true) %>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div class="col-md-12 text-center">
-    <%= f.submit nil, class: 'btn btn-primary btn-lg' %>
-    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
-                admin_contacts_path, class: 'btn' %>
+      <div class="col-md-12 text-center">
+        <%= f.submit nil, class: 'btn btn-primary' %>
+        <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+                    admin_contacts_path, class: 'btn btn-default' %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

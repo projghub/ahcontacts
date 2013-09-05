@@ -1,25 +1,28 @@
 <%- model_class = Admin::Email -%>
 <%- provide(:title, "Send Preview Email") -%>
-<%- provide(:description, t("emails.send_preview.description")) -%>
-<%- provide(:navigation_highlight, "") -%>
+<%= admin_page_header(yield(:title)) %>
 
-<%= form_tag send_preview_admin_email_path, { class: 'form-horizontal' } do %>
-  <div class="form-group">
-    <%= label_tag :email, nil, class: 'control-label col-md-3' %>
-    <div class="col-md-9">
-      <%= link_to @admin_email, admin_email_path(@admin_email) %>
-    </div>
-  </div>
-  <div class="form-group">
-    <%= label_tag :send_it_to, nil, class: 'control-label col-md-3' %>
-    <div class="col-md-9">
-      <%= text_field_tag :email, admin_current_user.email, class: 'form-control' %>
-    </div>
-  </div>
+<div class="row">
+  <div class="col-md-6">
+    <%= form_tag send_preview_admin_email_path, { class: 'form-horizontal' } do %>
+      <div class="form-group">
+        <%= label_tag :email, nil, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= link_to @admin_email, admin_email_path(@admin_email) %>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= label_tag :send_it_to, nil, class: 'control-label col-md-3' %>
+        <div class="col-md-9">
+          <%= text_field_tag :email, admin_current_user.email, class: 'form-control' %>
+        </div>
+      </div>
 
-  <div class="form-actions">
-    <%= submit_tag "Send Preview Email", class: 'btn btn-primary' %>
-    <%= link_to t('.cancel', default: t("helpers.links.cancel")),
-                admin_emails_path, class: 'btn' %>
+      <div class="col-md-9 col-md-offset-3">
+        <%= submit_tag "Send Preview Email", class: 'btn btn-primary' %>
+        <%= link_to t('.cancel', default: t("helpers.links.cancel")),
+                    admin_emails_path, class: 'btn btn-default' %>
+      </div>
+    <% end %>
   </div>
-<% end %>
+</div>

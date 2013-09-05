@@ -1,10 +1,11 @@
 <%- model_class = Admin::Status -%>
-<%= admin_page_header(model_class.model_name.human) %>
+<%- provide(:title, model_class.model_name.human.titleize) -%>
+<%= admin_page_header(yield(:title)) %>
 
 <dl class="dl-horizontal">
-  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:name) %></strong></dt>
   <dd><%= @admin_status %></dd>
-  <dt><strong><%= model_class.human_attribute_name(:placement) %>:</strong></dt>
+  <dt><strong><%= model_class.human_attribute_name(:placement) %></strong></dt>
   <dd><%= @admin_status.placement %></dd>
 </dl>
 
@@ -15,7 +16,7 @@
               edit_admin_status_path(@admin_status), class: 'btn btn-default' %>
   <%= link_to t('.destroy', default: t("helpers.links.destroy")),
               admin_status_path(@admin_status),
-              method: 'delete',
+              method: :delete,
               data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) },
               class: 'btn btn-danger' %>
 </div>

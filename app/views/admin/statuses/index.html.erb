@@ -1,5 +1,6 @@
 <%- model_class = Admin::Status -%>
-<%= admin_page_header(model_class.model_name.human.pluralize) %>
+<%- provide(:title, model_class.model_name.human.pluralize.titleize) -%>
+<%= admin_page_header(yield(:title)) %>
 
 <div id="filter_toggle">
   <%= new_admin_button("status") %>

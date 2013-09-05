@@ -1,4 +1,4 @@
-<div id="admin_search_form">
+<div id="row admin_search_form">
   <div class="col-md-9">
     <%= search_form_for @q, html: { class: 'form-horizontal' } do |f| %>
       <div class="form-group">
@@ -13,6 +13,7 @@
           <%= f.text_field :placement_eq, class: 'form-control' %>
         </div>
       </div>
+
       <div class="col-md-9 col-md-offset-3">
         <%= f.submit nil, class: 'btn btn-primary' %>
         <%= link_to "Reset", url_for, class: 'btn btn-default' %>
