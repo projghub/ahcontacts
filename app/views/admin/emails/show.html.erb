@@ -1,7 +1,6 @@
 <%- model_class = Admin::Email -%>
-<%- provide(:title, model_class.model_name.human) -%>
-<%- provide(:description, t("emails.show.description")) -%>
-<%- provide(:navigation_highlight, "campaigns") -%>
+<%- provide(:title, model_class.model_name.human.titleize) -%>
+<%= admin_page_header(yield(:title)) %>
 
 <dl class="dl-horizontal">
   <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
@@ -16,9 +15,9 @@
 
 <div class="form-actions">
   <%= link_to t('.back', default: t("helpers.links.back")),
-              admin_emails_path, class: 'btn'  %>
+              admin_emails_path, class: 'btn btn-default'  %>
   <%= link_to t('.edit', default: t("helpers.links.edit")),
-              edit_admin_email_path(@admin_email), class: 'btn' %>
+              edit_admin_email_path(@admin_email), class: 'btn btn-default' %>
   <%= link_to t('.destroy', default: t("helpers.links.destroy")),
               admin_email_path(@admin_email),
               method: 'delete',

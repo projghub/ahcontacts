@@ -7,9 +7,7 @@ form-actions -> col-md-9 col-md-offset-3
 
 Wrap search box in col-md-9
 
-
 btn -> btn btn-default
 filter_button.js -> addClass("btn-default")
-
 
 btn-mini -> btn-xs

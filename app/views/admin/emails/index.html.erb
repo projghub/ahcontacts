@@ -1,46 +1,41 @@
 <%- model_class = Admin::Email -%>
-<div class="page-header">
-  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+<%- provide(:title, model_class.model_name.human.pluralize.titleize) -%>
+<%= admin_page_header(yield(:title)) %>
+
+<div id="filter_toggle">
+  <%= new_admin_button("email") %>
+</div>
+<div id="filter">
+  <%= render 'search' %>
 </div>
 
-<% if @admin_emails.count > 0 %>
-  <div id="filter_toggle">
-    <%= new_email_button(:admin) %>
-  </div>
-  <div id="filter">
-    <%= render 'search' %>
-  </div>
+<%= will_paginate(@admin_emails) %>
 
-  <%= will_paginate(@admin_emails) %>
-
-  <table class="table table-striped table-bordered table-highlight">
-    <thead>
+<table class="table table-striped table-bordered table-highlight">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:subject) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', default: t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @admin_emails.each do |email| %>
       <tr>
-        <th><%= model_class.human_attribute_name(:name) %></th>
-        <th><%= model_class.human_attribute_name(:subject) %></th>
-        <th><%= model_class.human_attribute_name(:created_at) %></th>
-        <th><%=t '.actions', default: t("helpers.actions") %></th>
+        <td><%= link_to email, admin_email_path(email) %></td>
+        <td><%= email.subject %></td>
+        <td><%=l email.created_at, format: :created_at_date %></td>
+        <td>
+          <%= link_to t('.edit', default: t("helpers.links.edit")),
+                      edit_admin_email_path(email), class: 'btn btn-xs' %>
+          <%= link_to t('.destroy', default: t("helpers.links.destroy")),
+                      admin_email_path(email),
+                      method: :delete,
+                      data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) },
+                      class: 'btn btn-xs btn-danger' %>
+        </td>
       </tr>
-    </thead>
-    <tbody>
-      <% @admin_emails.each do |email| %>
-        <tr>
-          <td><%= link_to email, admin_email_path(email) %></td>
-          <td><%= email.subject %></td>
-          <td><%=l email.created_at, format: :created_at_date %></td>
-          <td>
-            <%= link_to t('.edit', default: t("helpers.links.edit")),
-                        edit_admin_email_path(email), class: 'btn btn-mini' %>
-            <%= link_to t('.destroy', default: t("helpers.links.destroy")),
-                        admin_email_path(email),
-                        method: :delete,
-                        data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) },
-                        class: 'btn btn-mini btn-danger' %>
-          </td>
-        </tr>
-      <% end %>
-    </tbody>
-  </table>
-<% else %>
-  <%= new_email_button(:admin) %>
-<% end %>
+    <% end %>
+  </tbody>
+</table>
