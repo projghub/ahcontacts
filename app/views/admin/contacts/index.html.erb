@@ -3,7 +3,7 @@
 <%= admin_page_header(yield(:title)) %>
 
 <div id="filter_toggle">
-  <%= new_admin_button("contact") %>
+  <%= new_button(:admin, :contact) %>
 </div>
 <div id="filter">
   <%= render 'search' %>
@@ -38,7 +38,7 @@
         <td><%=l contact.created_at, format: :created_at_date %></td>
         <td>
           <%= link_to t('.edit', default: t("helpers.links.edit")),
-                      edit_admin_contact_path(contact), class: 'btn btn-xs' %>
+                      edit_admin_contact_path(contact), class: 'btn btn-default btn-xs' %>
           <%= link_to t('.destroy', default: t("helpers.links.destroy")),
                       admin_contact_path(contact),
                       method: :delete,

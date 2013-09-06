@@ -10,13 +10,13 @@
 </dl>
 
 <div class="col-md-12">
-  <%= link_to t('.back', default: t("helpers.links.back")),
+  <%= link_to t('.back', default: t('helpers.links.back')),
               admin_statuses_path, class: 'btn btn-default'  %>
-  <%= link_to t('.edit', default: t("helpers.links.edit")),
+  <%= link_to t('.edit', default: t('helpers.links.edit')),
               edit_admin_status_path(@admin_status), class: 'btn btn-default' %>
-  <%= link_to t('.destroy', default: t("helpers.links.destroy")),
+  <%= link_to t('.destroy', default: t('helpers.links.destroy')),
               admin_status_path(@admin_status),
               method: :delete,
-              data: { confirm: t('.confirm', default: t("helpers.links.confirm", default: 'Are you sure?')) },
+              data: { confirm: t('.confirm', default: t('helpers.links.confirm', default: 'Are you sure?')) },
               class: 'btn btn-danger' %>
 </div>

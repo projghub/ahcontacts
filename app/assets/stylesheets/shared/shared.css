@@ -30,7 +30,7 @@ dt, dd {
  }
 
 /* sign in */
-.sign_in {
+.sign-in {
   width: 350px;
   margin: 0 auto;
 }
@@ -48,12 +48,12 @@ dt, dd {
   padding: 2px 0px 10px 0px;
 }
 
-.sign_in .control-group {
+.sign-in .form-group {
   display: block;
   width: 300px;
 }
 
-.sign_in .control-label {
+.sign-in .control-label {
   display: block;
   float: left;
   color: #000;
@@ -62,15 +62,7 @@ dt, dd {
   width: 100px;
 }
 
-.sign_in .controls {
-  display: block;
-}
-
-.sign_in h3 {
-  line-height: 20px;
-}
-
-.sign_in .text-field {
+.sign-in .form-control {
   width: 286px;
 }
 

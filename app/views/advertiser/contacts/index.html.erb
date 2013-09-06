@@ -1,12 +1,9 @@
 <%- model_class = Advertiser::Contact -%>
-<div class="page-header">
-  <h1><%=t '.title', default: model_class.model_name.human.pluralize.titleize %></h1>
-</div>
+<%- provide(:title, model_class.model_name.human.pluralize.titleize) -%>
+<%= advertiser_page_header(yield(:title)) %>
 
 <div id="filter_toggle">
-  <%= link_to t('.new', default: t("helpers.links.new")),
-            new_advertiser_contact_path,
-            class: 'btn btn-primary' %>
+  <%= new_button(:advertiser, :contact) %>
 </div>
 <div id="filter">
   <%= render 'search' %>

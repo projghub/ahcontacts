@@ -3,7 +3,7 @@
 <%= admin_page_header(yield(:title)) %>
 
 <div id="filter_toggle">
-  <%= new_admin_button("email") %>
+  <%= new_button(:admin, :email) %>
 </div>
 <div id="filter">
   <%= render 'search' %>
